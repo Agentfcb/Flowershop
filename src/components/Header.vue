@@ -3,7 +3,8 @@
 
     <div class="header-left">
       <div class="logo" @click="$router.push('/')">
-       Цветочный магазин
+        <span class="logo-icon">🌸</span>
+        <span class="logo-text">FlowerShop</span>
       </div>
     </div>
 
@@ -27,8 +28,9 @@
     <div class="header-right">
       <nav>
         <div class="nav-item" @mouseenter="showCatalogDropdown = true" @mouseleave="showCatalogDropdown = false">
-          <router-link to="/catalog" class="nav-link">
-            Каталог ▼
+          <router-link to="/catalog" class="nav-link nav-link-catalog">
+            Каталог
+            <span class="dropdown-arrow">▼</span>
           </router-link>
           
     
@@ -48,8 +50,6 @@
           </div>
         </div>
         
-        <router-link to="/" class="nav-link">Главная</router-link>
-        
 
         <div class="profile-section">
           <div v-if="isLoggedIn" class="user-menu">
@@ -64,7 +64,11 @@
         
 
         <router-link to="/cart" class="nav-link cart-link">
-          🛒
+          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
           <span v-if="cartTotalItems > 0" class="cart-count">{{ cartTotalItems }}</span>
         </router-link>
       </nav>
@@ -146,15 +150,29 @@ const logout = () => {
 }
 
 .logo {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.logo-text {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Центр: Поиск */
@@ -215,15 +233,31 @@ nav {
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 25px;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  position: relative;
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.nav-link-catalog {
+  font-weight: 600;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+  transform: rotate(180deg);
 }
 
 .router-link-active {
@@ -321,6 +355,19 @@ nav {
 /* Корзина */
 .cart-link {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.cart-link:hover .cart-icon {
+  transform: scale(1.1);
 }
 
 .cart-count {
@@ -332,10 +379,11 @@ nav {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 </style>
