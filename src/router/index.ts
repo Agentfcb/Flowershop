@@ -29,17 +29,17 @@ const routes = [
   {
     path: '/cart',
     name: 'Cart',
-    component: () => import('../views/cart.vue')
+    component: () => import('../views/Cart.vue')
   },
   {
     path: '/search',
     name: 'Search',
-    component: () => import('../views/search.vue')
+    component: () => import('../views/Search.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/auth.vue')
+    component: () => import('../views/Auth.vue')
   },
   {
     path: '/register',

@@ -14,11 +14,18 @@
       
       <div class="products-grid">
         <div v-for="product in searchResults" :key="product.id" class="product-card">
-          <div class="product-image">[ФОТО]</div>
+          <div class="product-image-wrapper">
+            <img 
+              :src="`https://picsum.photos/seed/product${product.id}/400/400`" 
+              :alt="product.name" 
+              class="product-image"
+              @error="handleImageError"
+            />
+          </div>
           <h3>{{ product.name }}</h3>
           <div class="rating">★ {{ product.rating }}</div>
           <div class="price">{{ product.price }}₽</div>
-          <button @click="addToCart(product)" class="add-btn">В корзину</button>
+          <button @click="addToCartHandler(product)" class="add-btn">В корзину</button>
         </div>
       </div>
     </div>
@@ -26,8 +33,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useCart } from '../composables/useCart'
 
 interface Product {
   id: number
@@ -38,18 +46,20 @@ interface Product {
 }
 
 const route = useRoute()
+const { addToCart } = useCart()
+
 const searchQuery = ref('')
 const searchResults = ref<Product[]>([])
 
 // Все товары для поиска
 const allProducts: Product[] = [
-  { id: 1, name: 'Название', price: 4500, rating: 5.0, category: 'mono' },
-  { id: 2, name: 'Название', price: 3500, rating: 4.56, category: 'box' },
-  { id: 3, name: 'Название', price: 25000, rating: 5.0, category: 'basket' },
-  { id: 4, name: 'Название', price: 25000, rating: 5.0, category: 'mono' },
-  { id: 5, name: 'Название', price: 2000, rating: 4.33, category: 'box' },
-  { id: 6, name: 'Название', price: 10000, rating: 4.0, category: 'basket' },
-  { id: 7, name: 'Название', price: 1998, rating: 4.93, category: 'mono' }
+  { id: 1, name: 'Букет из 101 красной розы', price: 15000, rating: 5.0, category: 'Розы' },
+  { id: 2, name: 'Пионы микс', price: 8500, rating: 4.56, category: 'Пионы' },
+  { id: 3, name: 'Весенние тюльпаны', price: 3500, rating: 5.0, category: 'Тюльпаны' },
+  { id: 4, name: 'Розовые розы 51 штука', price: 7500, rating: 5.0, category: 'Розы' },
+  { id: 5, name: 'Авторский букет', price: 6000, rating: 4.33, category: 'Сборные' },
+  { id: 6, name: 'Белые пионы', price: 9500, rating: 4.0, category: 'Пионы' },
+  { id: 7, name: 'Моно-букет из гербер', price: 4500, rating: 4.93, category: 'Моно' }
 ]
 
 onMounted(() => {
@@ -57,6 +67,14 @@ onMounted(() => {
   if (query) {
     searchQuery.value = query
     performSearch(query)
+  }
+})
+
+// Следим за изменениями маршрута
+watch(() => route.query.q, (newQuery) => {
+  if (newQuery) {
+    searchQuery.value = newQuery as string
+    performSearch(newQuery as string)
   }
 })
 
@@ -68,8 +86,23 @@ const performSearch = (query: string) => {
   )
 }
 
-const addToCart = (product: Product) => {
-  alert(`Добавлено в корзину: ${product.name}`)
+const addToCartHandler = (product: Product) => {
+  // Создаем объект товара для корзины
+  const cartProduct = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: `https://picsum.photos/seed/product${product.id}/400/400`
+  }
+  
+  addToCart(cartProduct)
+  alert(`Товар "${product.name}" добавлен в корзину`)
+}
+
+const handleImageError = (event: Event) => {
+  // Если картинка не загрузилась, используем заглушку
+  const target = event.target as HTMLImageElement
+  target.src = 'https://via.placeholder.com/400x400/b1658b/ffffff?text=No+Image'
 }
 </script>
 
@@ -117,15 +150,22 @@ const addToCart = (product: Product) => {
   text-align: center;
 }
 
-.product-image {
+.product-image-wrapper {
+  position: relative;
   height: 150px;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   margin-bottom: 1rem;
-  border-radius: 8px;
-  color: #aaa;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.1);
 }
 
 .rating {

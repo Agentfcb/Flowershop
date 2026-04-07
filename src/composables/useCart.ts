@@ -66,6 +66,8 @@ export function useCart() {
     return cartItems.value.reduce((sum, item) => sum + (item.price * item.quantity), 0)
   })
 
+  const isEmpty = computed(() => cartItems.value.length === 0)
+
   // Загружаем корзину при инициализации
   loadFromLocalStorage()
 
@@ -75,7 +77,8 @@ export function useCart() {
     removeFromCart,
     updateQuantity,
     clearCart,
-    cartTotalItems,
-    cartTotalPrice
+    totalItems: cartTotalItems,
+    totalPrice: cartTotalPrice,
+    isEmpty
   }
 }

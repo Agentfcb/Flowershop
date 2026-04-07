@@ -117,15 +117,15 @@
         <div class="order-summary">
           <h2>Ваш заказ</h2>
           
-          <div class="order-items">
-            <div v-for="item in cartItems" :key="item.id" class="order-item">
-              <div class="order-item-info">
-                <span class="item-name">{{ item.name }}</span>
-                <span class="item-quantity">× {{ item.quantity }}</span>
-              </div>
-              <span class="item-price">{{ formatPrice(item.price * item.quantity) }}</span>
-            </div>
-          </div>
+           <div class="order-items">
+             <div v-for="item in cartItems" :key="item.id" class="order-item">
+               <div class="order-item-info">
+                 <span class="item-name">{{ item.name }}</span>
+                 <span class="item-quantity">× {{ item.quantity }}</span>
+               </div>
+               <span class="item-price">{{ formatPrice(item.price * item.quantity) }}</span>
+             </div>
+           </div>
 
           <div class="order-totals">
             <div class="total-row">

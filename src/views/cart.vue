@@ -15,7 +15,7 @@
         <div v-for="item in cartItems" :key="item.id" class="cart-item">
           <div class="item-info">
             <h3>{{ item.name }}</h3>
-            <p class="category">{{ getCategoryName(item.category) }}</p>
+            <p class="category">{{ getCategoryName('mono') }}</p>
           </div>
           
           <div class="item-controls">
