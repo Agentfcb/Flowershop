@@ -22,6 +22,7 @@ import Footer from './components/Footer.vue'
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
 #app {

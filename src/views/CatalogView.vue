@@ -78,7 +78,7 @@ const products: Product[] = [
     name: 'Букет из 101 красной розы',
     description: 'Классический букет из отборных красных роз',
     price: 15000,
-    image: 'https://picsum.photos/seed/roses1/400/400',
+    image: 'https://donnaroza-shop.ru/wp-content/uploads/2022/05/buket-101-roza-40-sm-krasnyj-01.jpeg',
     category: 'Розы',
     badge: 'ХИТ'
   },
@@ -86,8 +86,8 @@ const products: Product[] = [
     id: 2,
     name: 'Пионы микс',
     description: 'Нежные пионы разных оттенков, в крафт бумаге ',
-    price: 8500,
-    image: 'https://picsum.photos/seed/peonies/400/400',
+    price: 10500,
+    image: 'https://zarum.ru/uploads/posts/2022-07/1657393977_f46a048b-f903-4df7-ab76-fd84f4dff5a3.jpeg',
     category: 'Пионы',
     badge: 'NEW'
   },
@@ -96,7 +96,7 @@ const products: Product[] = [
     name: 'Весенние тюльпаны',
     description: 'Яркие тюльпаны для поднятия настроения',
     price: 3500,
-    image: 'https://picsum.photos/seed/tulips/400/400',
+    image: 'https://9046065.ru/image/catalog/tylpan/35%20%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D1%8B%D1%85%20%D0%B2%20%D0%BA%D0%BE%D1%80%D0%BE%D0%B1%D0%BA%D0%B5.jpg',
     category: 'Тюльпаны'
   },
   {
@@ -104,15 +104,15 @@ const products: Product[] = [
     name: 'Розовые розы 51 штука',
     description: 'Нежные розовые розы в крафтовой упаковке',
     price: 7500,
-    image: 'https://picsum.photos/seed/roses2/400/400',
+    image: 'https://www.prostocvet.ru/upload/iblock/398/qoxkc1vud9xahume3g42rmxwb3jff5f4.webp',
     category: 'Розы'
   },
   {
     id: 5,
     name: 'Авторский букет',
-    description: 'Уникальная композиция от флориста',
+    description: 'Уникальная композиция от опытного флориста',
     price: 6000,
-    image: 'https://picsum.photos/seed/bouquet/400/400',
+    image: 'https://www.max-gift.ru/wp-content/uploads/2024-10-18-14.04.43.jpg',
     category: 'Сборные',
     badge: '-20%'
   },
@@ -121,7 +121,7 @@ const products: Product[] = [
     name: 'Белые пионы',
     description: 'Изысканные белые пионы премиум класса',
     price: 9500,
-    image: 'https://picsum.photos/seed/whitepeonies/400/400',
+    image: 'https://topcvety.ru/upload/goods/687/images/3714/middle-image-3714-1715772241.jpeg',
     category: 'Пионы'
   }
 ]
@@ -143,6 +143,7 @@ const handleImageError = (event: Event) => {
 <style scoped>
 .catalog {
   padding: 20px 0;
+  background-color: #f5f6f7;
 }
 
 .page-title {

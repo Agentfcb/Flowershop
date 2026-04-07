@@ -3,8 +3,7 @@
 
     <div class="header-left">
       <div class="logo" @click="$router.push('/')">
-        <span class="logo-icon">🌸</span>
-        <span class="logo-text">FlowerShop</span>
+        <img src="/images/logo.png" alt="FlowerShop Logo" class="logo-image" />
       </div>
     </div>
 
@@ -152,13 +151,19 @@ const logout = () => {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  justify-content: center;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0;
   border-radius: 8px;
   transition: all 0.3s ease;
+  background: transparent;
+}
+
+.logo-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .logo:hover {

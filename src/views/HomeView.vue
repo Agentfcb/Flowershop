@@ -33,22 +33,22 @@
       <h2 class="section-title">Почему выбирают нас</h2>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">🚚</div>
+         
           <h3>Быстрая доставка</h3>
           <p>Доставим за 2 часа или в удобное время</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🌹</div>
+          
           <h3>Свежие цветы</h3>
           <p>Только свежие поставки каждый день</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💳</div>
+          
           <h3>Удобная оплата</h3>
           <p>Оплата картой, наличными или онлайн</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🎁</div>
+          
           <h3>Подарки</h3>
           <p>Открытка и упаковка в подарок</p>
         </div>
@@ -65,8 +65,8 @@
 /* HERO SECTION */
 .hero {
   /* ПУНКТ 5: ФОНОВАЯ КАРТИНКА */
-  background: linear-gradient(135deg, rgba(177, 101, 139, 0.9), rgba(153, 75, 117, 0.9));
-  height: 600px;
+  background: linear-gradient(135deg, #963b67 30%, #1f4717 100%);
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,19 +76,11 @@
   margin-bottom: 60px;
   position: relative;
   overflow: hidden;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Если нет фоновой картинки, используем градиент */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(177, 101, 139, 0.9), rgba(153, 75, 117, 0.9));
-  z-index: 1;
-}
 
 .hero-content {
   position: relative;
