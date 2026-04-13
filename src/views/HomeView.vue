@@ -2,6 +2,7 @@
   <div class="home">
     <!-- HERO SECTION С ФОНОВОЙ КАРТИНКОЙ -->
     <section class="hero">
+      <div class="hero-bg"></div>
       <div class="hero-content">
         <h1 class="hero-title">Свежие цветы с доставкой</h1>
         <p class="hero-subtitle">
@@ -64,14 +65,12 @@
 <style scoped>
 /* HERO SECTION */
 .hero {
-  /* ПУНКТ 5: ФОНОВАЯ КАРТИНКА */
-  background: linear-gradient(135deg, #963b67 30%, #1f4717 100%);
-  height: 400px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 20px;
   margin-bottom: 60px;
   position: relative;
@@ -79,8 +78,34 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  animation: shake 0.7s ease-in-out;
 }
 
+.hero:hover {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/main.jpg') center center / cover no-repeat;
+  filter: blur(4px);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
 
 .hero-content {
   position: relative;
@@ -125,12 +150,12 @@
 }
 
 .btn-primary {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: #b1658b;
 }
 
 .btn-primary:hover {
-  background-color: #f8f9fa;
+  background-color: #61a076c9;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -142,7 +167,7 @@
 }
 
 .btn-secondary:hover {
-  background-color: white;
+  background-color: #61a076c9;
   color: #b1658b;
   transform: translateY(-3px);
 }

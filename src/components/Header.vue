@@ -34,17 +34,20 @@
           
     
           <div v-if="showCatalogDropdown" class="dropdown-menu">
-            <router-link to="/catalog/mono" class="dropdown-item" @click="showCatalogDropdown = false">
-              Моно-букеты
-            </router-link>
-            <router-link to="/catalog/box" class="dropdown-item" @click="showCatalogDropdown = false">
-              Цветы в коробке
-            </router-link>
-            <router-link to="/catalog/basket" class="dropdown-item" @click="showCatalogDropdown = false">
-              Композиции в корзинках
-            </router-link>
             <router-link to="/catalog" class="dropdown-item catalog" @click="showCatalogDropdown = false">
               Весь каталог →
+            </router-link>
+            <router-link to="/catalog/Розы" class="dropdown-item" @click="showCatalogDropdown = false">
+              Розы
+            </router-link>
+            <router-link to="/catalog/Пионы" class="dropdown-item" @click="showCatalogDropdown = false">
+              Пионы
+            </router-link>
+            <router-link to="/catalog/Тюльпаны" class="dropdown-item" @click="showCatalogDropdown = false">
+              Тюльпаны
+            </router-link>
+            <router-link to="/catalog/Сборные" class="dropdown-item" @click="showCatalogDropdown = false">
+              Сборные
             </router-link>
           </div>
         </div>
@@ -160,8 +163,8 @@ const logout = () => {
 }
 
 .logo-image {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   border-radius: 8px;
 }

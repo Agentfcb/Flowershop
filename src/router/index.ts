@@ -17,29 +17,29 @@ const routes = [
     component: () => import('../views/CatalogView.vue')
   },
   {
-  path: '/checkout',
-  name: 'Checkout',
-  component: () => import('../views/CheckoutPage.vue')
-},
-{
-  path: '/order-success',
-  name: 'OrderSuccess',
-  component: () => import('../views/OrderSuccessPage.vue')
-},
+    path: '/checkout',
+    name: 'Checkout',
+    component: () => import('../views/CheckoutPage.vue')
+  },
+  {
+    path: '/order-success',
+    name: 'OrderSuccess',
+    component: () => import('../views/OrderSuccessPage.vue')
+  },
   {
     path: '/cart',
     name: 'Cart',
-    component: () => import('../views/cart.vue')
+    component: () => import('../views/CartPage.vue')
   },
   {
     path: '/search',
     name: 'Search',
-    component: () => import('../views/search.vue')
+    component: () => import('../views/SearchView.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/auth.vue')
+    component: () => import('../views/AuthPage.vue')
   },
   {
     path: '/register',

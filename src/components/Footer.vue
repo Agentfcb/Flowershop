@@ -4,7 +4,7 @@
       <!-- Основная информация -->
       <div class="footer-section footer-about">
         <div class="footer-logo">
-          <span class="footer-logo-icon">🌸</span>
+          <span class="footer-logo-icon"></span>
           <span class="footer-logo-text">FlowerShop</span>
         </div>
         <p class="footer-description">
@@ -33,7 +33,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
             </svg>
-            <span>г. Москва, ул. Цветочная, д. 15</span>
+            <span>г. Владимир, ул. Цветочная, д. 15</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon">
@@ -50,8 +50,8 @@
         </ul>
         <div class="footer-work-time">
           <strong>Режим работы:</strong><br>
-          Пн-Пт: 9:00 - 21:00<br>
-          Сб-Вс: 10:00 - 20:00
+          Пн-Пт: 9:00 - 20:00<br>
+          Сб-Вс: 10:00 - 19:00
         </div>
       </div>
 
@@ -60,14 +60,12 @@
     <!-- Нижняя часть -->
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p>&copy; 2024 FlowerShop. Все права защищены.</p>
+        <p>&copy; 2026 FlowerShop. Все права защищены.</p>
         <p>Сайт создан с любовью к цветам 🌸</p>
       </div>
       <div class="footer-payment">
         <span>Мы принимаем:</span>
         <div class="payment-icons">
-          <span class="payment-icon" title="Visa">💳</span>
-          <span class="payment-icon" title="MasterCard">💳</span>
           <span class="payment-icon" title="Мир">💳</span>
           <span class="payment-icon" title="Наличные">💵</span>
         </div>
